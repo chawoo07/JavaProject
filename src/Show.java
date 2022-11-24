@@ -4,7 +4,7 @@ public class Show extends Main {
     Scanner sc = new Scanner(System.in);
     int num;
 
-    void Show() {
+    public void show() {
 
         int j = 0;
         System.out.println("==============================");

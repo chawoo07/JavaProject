@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class Add extends Main {
     Date date = new Date();
-
-
     Scanner sc = new Scanner(System.in);
 
     String[] write = new String[4];
@@ -15,7 +13,7 @@ public class Add extends Main {
     String writer = null;
     String nowTime = null;
 
-    public void Add() {
+    public void add() {
         System.out.print("제목 >> ");
         title = sc.next();
         System.out.print("내용 >> ");
@@ -36,8 +34,6 @@ public class Add extends Main {
 
         super.count++;
     }
-
-
 }
 
 
