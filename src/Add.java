@@ -10,29 +10,30 @@ public class Add extends Main {
     String[] write = new String[4];
     String title = null;
     String text = null;
-    String writer = null;
+    String author = null;
     String nowTime = null;
 
-    public void add() {
+    public void add() throws Exception {
         System.out.print("제목 >> ");
-        title = sc.next();
+        this.title = sc.nextLine();
         System.out.print("내용 >> ");
-        text = sc.next();
+        this.text = sc.nextLine();
         System.out.print("글쓴이 >>");
-        writer = sc.next();
-        nowTime = date.toString(); //지금 시간
-        addArr(title, text, writer, nowTime);
-        input.input(1);
-
+        this.author = sc.nextLine();
+        this.nowTime = date.toString(); //지금 시간
+        addArr(this.title, this.text, this.author, this.nowTime);
     }
 
-    void addArr(String title, String text, String writer, String nowTime) {
+    static void addArr(String title, String text, String author, String nowTime) throws Exception {
+        
+        writeInMap.put(count, title + "|" + text + "|" + author + "|" + nowTime);
+        writeMap.put(count, title + "|" + author + "|" + nowTime);
+        Writer writer = new Writer();
+        count = (writeInMap.size() + 1);
+        //System.out.println(writeInMap.get((writeInMap.size() - 1)).toString());
+       
+        writer.overWrite();
         System.out.println("작성했습니다.");
-        writeInMap.put(super.count, title + "  " + text + "  " + writer + "  " + nowTime);
-        writeMap.put(super.count, title + "  " + writer + "  " + nowTime);
-
-
-        super.count++;
     }
 }
 

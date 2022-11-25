@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Del extends Main{
+class Del extends Main {
     Scanner sc = new Scanner(System.in);
     
     public void del(){
