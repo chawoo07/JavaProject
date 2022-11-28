@@ -8,7 +8,6 @@ public class GetAccessForServer extends Thread {
 	private Socket socket = null;
 	private List<Socket> sockets = null;
 	private List<RecieverForServer> recieve = null;
-	private int accessCount = 0;
 	
 	public GetAccessForServer(List<RecieverForServer> recieve, ServerSocket serverSocket, List<Socket> sockets) {
 		// TODO Auto-generated constructor stub
@@ -23,9 +22,8 @@ public class GetAccessForServer extends Thread {
 				this.socket = serverSocket.accept();
 				this.sockets.add(this.socket);
 				this.recieve.add(new RecieverForServer());
-				this.recieve.get(this.accessCount).addSocket(sockets.get(accessCount));
-				this.recieve.get(accessCount).start();
-				this.accessCount++;
+				this.recieve.get(ServerMain.access).addSocket(sockets.get(ServerMain.access));
+				this.recieve.get(ServerMain.access).start();
 				System.out.println(this.socket.getInetAddress() + " 접속");
 				System.out.println((ServerMain.access + 1) + "명 접속중");
 				ServerMain.access++;

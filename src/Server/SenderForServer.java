@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 public class SenderForServer extends ServerMain {
-	public static DataOutputStream out = null;
+	private DataOutputStream out = null;
 	String[] tokens = null;
 	
 	public SenderForServer(Socket socket) throws Exception {
